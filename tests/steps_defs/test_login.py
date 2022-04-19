@@ -1,7 +1,5 @@
-import pytest
-from time import sleep
 from pytest_bdd import scenarios, given, when, then, parsers
-from selenium import webdriver
+
 
 from pages.account_page import AccountPage
 from pages.authentication_page import AuthenticationPage
@@ -10,18 +8,6 @@ from pages.home_page.nav_bar import NavBar
 scenarios('../features/login/login.feature')
 
 DUCKDUCKGO_HOME = 'https://automationpractice.com/index.php'
-
-
-@pytest.fixture
-def browser():
-    # For this example, we will use Firefox
-    # You can change this fixture to use other browsers, too.
-    # A better practice would be to get browser choice from a config file.
-    b = webdriver.Chrome()
-    b.maximize_window()
-    b.implicitly_wait(10)
-    yield b
-    b.quit()
 
 
 @given('the automation practice page is displayed', target_fixture='ddg_home')

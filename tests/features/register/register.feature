@@ -1,5 +1,5 @@
-Feature: # Enter feature name here
-  # Enter feature description here
+Feature: Register
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: Acceptance test - Register
+    Given the automation practice page is displayed
+    When I click on 'Sing in' button
